@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "FileSharingSystem",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://127.0.0.1:8000/api/signup/", "host": ["127.0.0.1:8000"], "path": ["api", "signup"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"client4\",\n  \"email\": \"client4@example.com\",\n  \"password\": \"password123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://127.0.0.1:8000/api/login/", "host": ["127.0.0.1:8000"], "path": ["api", "login"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"client1\",\n  \"password\": \"password123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Verify Email",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Token 7184fd61968f39e6a1004812367e6890446da45c" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/send-verification/?format=json",
+          "host": ["127.0.0.1:8000"],
+          "path": ["api", "send-verification"],
+          "query": [{ "key": "format", "value": "json" }]
+        }
+      }
+    },
+    {
+      "name": "List Files",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Token ac1f43adde1b6c26691f40f841ba79210da0ee04" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/download/gAAAAABoZKqMfycVng2eO3gIVWixssXntgipzg7bjY108k38a-vhbh7mzaBSH_3i0EgO1sjlPZUd_8ZYLUAy5vbQkiMECb9mDQ==/",
+          "host": ["127.0.0.1:8000"],
+          "path": ["api", "download", "gAAAAABoZKqMfycVng2eO3gIVWixssXntgipzg7bjY108k38a-vhbh7mzaBSH_3g0EgO1sjlPZUd_8ZYLUAy5vbQkiMECb9mDQ=="]
+        }
+      }
+    },
+    {
+      "name": "Download File",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Token 7184fd61968f39e6a1004812367e6890446da45c" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/download/gAAAAABoZLWBnMno6BMTy4BKO_w3oNM3hOo00C0S0jfWaAqfeT5BGTVfGJTpOBGZnilfnh5wZpPS2k2YGoQ07Bz32wy49z9e_A==/1/",
+          "host": ["127.0.0.1:8000"],
+          "path": [
+            "api",
+            "download",
+            "gAAAAABoZLWBnMno6BMTy4BKO_w3oNM3hOo00C0S0jfWaAqfeT5BGTVfGJTpOBGZnilfnh5wZpPS2k2YGoQ07Bz32wy49z9e_A==",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}
